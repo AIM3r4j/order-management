@@ -1,0 +1,189 @@
+{
+	"info": {
+		"_postman_id": "bfb0030b-3b03-4e8a-94fc-48e108108370",
+		"name": "Order Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20218666",
+		"_collection_link": "https://www.postman.com/m3r4j/workspace/rtl/collection/20218666-bfb0030b-3b03-4e8a-94fc-48e108108370?action=share&source=collection_link&creator=20218666"
+	},
+	"item": [
+		{
+			"name": "Get All Orders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/omapi/order",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"omapi",
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Single Order",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/omapi/order/:id",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"omapi",
+						"order",
+						":id"
+					],
+					"variable": [
+						{
+							"id": 0,
+							"key": "id",
+							"value": "1",
+							"type": "string"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": \"123e4567-e89b-12d3-a456-426614174000\",\r\n    \"products\": [\r\n        {\r\n            \"productId\": \"123e4567-e89b-12d3-a456-426614174001\",\r\n            \"quantity\": 2\r\n        },\r\n        {\r\n            \"productId\": \"123e4567-e89b-12d3-a456-426614174002\",\r\n            \"quantity\": 1\r\n        }\r\n    ],\r\n    \"payment\": {\r\n        \"method\": \"credit_card\",\r\n        \"status\": \"pending\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/omapi/order",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"omapi",
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Order",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": \"123e4567-e89b-12d3-a456-426614174000\",\r\n    \"products\": [\r\n        {\r\n            \"productId\": \"123e4567-e89b-12d3-a456-426614174003\",\r\n            \"quantity\": 2\r\n        },\r\n        {\r\n            \"productId\": \"123e4567-e89b-12d3-a456-426614174004\",\r\n            \"quantity\": 1\r\n        }\r\n    ],\r\n    \"payment\": {\r\n        \"method\": \"cash\",\r\n        \"status\": \"pending\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/omapi/order/:id",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"omapi",
+						"order",
+						":id"
+					],
+					"variable": [
+						{
+							"id": 0,
+							"key": "id",
+							"value": "1",
+							"type": "string"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Partially Update Order",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": \"123e4567-e89b-12d3-a456-426614174000\",\r\n    \"products\": [\r\n        {\r\n            \"productId\": \"123e4567-e89b-12d3-a456-426614174005\",\r\n            \"quantity\": 2\r\n        },\r\n        {\r\n            \"productId\": \"123e4567-e89b-12d3-a456-426614174006\",\r\n            \"quantity\": 1\r\n        }\r\n    ],\r\n    \"payment\": {\r\n        \"method\": \"cash\",\r\n        \"status\": \"complete\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/omapi/order/:id",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"omapi",
+						"order",
+						":id"
+					],
+					"variable": [
+						{
+							"id": 0,
+							"key": "id",
+							"value": "1",
+							"type": "string"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Order",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/omapi/order/:id",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"omapi",
+						"order",
+						":id"
+					],
+					"variable": [
+						{
+							"id": 0,
+							"key": "id",
+							"value": "1",
+							"type": "string"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "http://localhost:5001",
+			"type": "string"
+		}
+	]
+}
